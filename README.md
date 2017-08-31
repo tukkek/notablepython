@@ -174,6 +174,12 @@ import this
 
 More of an easter egg but a very wise one, at that :) It will output the contents of [PEP 20](https://www.python.org/dev/peps/pep-0020/), which tells you what Python is all about! Source: https://stackoverflow.com/a/101276
 
+# Honorable mentions
+
+This section covers, in brief, lesser-known methods and libraries that, while less notable or not part of the standard Python distribution, can still be very helpful for one reason or another.
+
+* **[difflib.get_close_matches()](https://docs.python.org/3/library/difflib.html#difflib.get_close_matches)** - can auto-correct user input (such as program arguments) on non-critical use cases.
+
 # Acknowledgments
 
 I'd like to thank Satwik Kansal for the [What the f\*ck, Python?](https://github.com/satwikkansal/wtfPython) project. I have started this reference a couple of times in the past but seeing how neatly and enjoyable his own documentation was, it renewed my focus to get this done and hopefully be as fun/useful to read as his own was!
