@@ -25,7 +25,17 @@ Taking the first comparison as an example, the way this works is equivalent to `
 True is False == False #False
 ```
 
-Source https://stackoverflow.com/a/101945
+Source: https://stackoverflow.com/a/101945
+
+# In-place value swapping
+
+```py
+a,b = 1,2
+a, b = b, a
+print(a,b) # prints "2 1"
+```
+
+Simple trick but removes the need for a placeholder variable, in a fairly common scenario. Source: https://stackoverflow.com/a/102037
 
 # Unconventional `else` blocks
 
