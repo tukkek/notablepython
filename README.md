@@ -130,7 +130,7 @@ def does_exists_num(list, to_find):
       else: # executed if "break" above isn't reached
           print("Does not exist") 
 ```
-
+The `else` block will be executed after iteration is over, unless it is forcefully exited by a `break`. This works in the same way for the `while` statement
 
 ```py
 try: #run some code
