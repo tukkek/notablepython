@@ -66,6 +66,14 @@ finally: # always executed
 
 Note that every block besides "try" itself is optional - but you must have at least one of them to create a valid "try" clause - and you need at least one "except" block though to use "else". This means you can have only a try-finally or a simple try-except.
 
+# Zen of Python
+
+```py
+import this
+```
+
+More of an easter egg but a very wise one, at that :) It will output the contents of [PEP 20](https://www.python.org/dev/peps/pep-0020/), which tells you what Python is all about! Source: https://stackoverflow.com/a/101276
+
 # Acknowledgments
 
 I'd like to thank Satwik Kansal for the [What the f\*ck, Python?](https://github.com/satwikkansal/wtfPython) project. I have started this reference a couple of times in the past but seeing how neatly and enjoyable his own documentation was, it renewed my focus to get this done and hopefully be as fun/useful to read as his own was!
