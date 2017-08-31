@@ -85,6 +85,20 @@ print(a) #prints: [1, 'g']
 
 Turns out list slicing syntax is not only useful for reading lists but also for writing to them! Source: http://sahandsaba.com/thirty-python-language-features-and-tricks-you-may-not-know.html
 
+## Multi-line strings
+
+```py
+sql = '''select * from some_table 
+         where id > 10
+         order by name'''
+
+sql = ('select * from some_table '
+       'where id > 10 '
+       'order by name') 
+```
+
+Usually, when asked about formatting long strings, people will refer you to the triple-quote syntax (first example above). However, this has the substantial downside of taking all that whitespace (and newline characters) into your string. Sometimes this has no impact at all but on other times it makes your output nigh impossible to read later on - if you are trying to write HTML, for example. You shouldn't have to choose between beautiful, easy-to-read code in the source level or at the final output level, so using the parenthesis notation can be a real helper in such situations. Source: https://stackoverflow.com/a/3342952
+
 ## Multiplying strings by booleans
 
 ```py
