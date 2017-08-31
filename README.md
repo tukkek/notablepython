@@ -52,7 +52,7 @@ hello world---------
 '''
 ```
 
-These 3 methods are useful for any type of diplay that uses fixed-width fonts. They are also available with [bytes and bytearrays](https://docs.python.org/3/library/stdtypes.html#bytes-and-bytearray-operations).
+These 3 methods are useful for any type of diplay that uses fixed-width fonts. They are also available with [bytes and bytearrays](https://docs.python.org/3/library/stdtypes.html#bytes-and-bytearray-operations). If you need to further wrap the text, Python offers [an entire module](https://docs.python.org/3/library/textwrap.html) to help with that.
 
 ## Dictionary comprehension
 
