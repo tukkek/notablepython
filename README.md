@@ -89,7 +89,7 @@ Turns out list slicing syntax is not only useful for reading lists but also for 
 
 ```py
 css_class='button_selected' if selected else ''
-css_class='selected'*selected
+css_class='button_selected'*selected
 button='<button value="Click me" class="{}"/>'.format(css_class)
 ```
 
