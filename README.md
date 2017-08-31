@@ -47,7 +47,7 @@ print(a) #prints: [1, -2, -3, -4, -5, -6, -7, -8, 9]
 a[1:]=['b','c','d']
 print(a) #prints: [1, 'b', 'c', 'd']
 a[-1:]=['d','e','f','g']
-print(a) #[1, 'b', 'c', 'd', 'e', 'f', 'g']
+print(a) #prints: [1, 'b', 'c', 'd', 'e', 'f', 'g']
 a[1:-1]=[]
 print(a) #prints: [1, 'g']
 ```
