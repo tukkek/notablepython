@@ -31,7 +31,7 @@ Source: https://stackoverflow.com/a/101945
 
 ```py
 a,b = 1,2
-a, b = b, a
+a,b = b,a
 print(a,b) # prints "2 1"
 ```
 
