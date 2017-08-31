@@ -10,7 +10,7 @@ Feel free to submit [a new issue to this project's tracker](https://github.com/t
 
 This document is up-to-date with **Python 3.7**.
 
-# Chaining comparison operators
+## Chaining comparison operators
 
 ```py
 x = 5
@@ -27,7 +27,7 @@ True is False == False #False
 
 Source: https://stackoverflow.com/a/101945
 
-# In-place value swapping
+## In-place value swapping
 
 ```py
 a,b = 1,2
@@ -37,7 +37,7 @@ print(a,b) # prints "2 1"
 
 Simple trick but removes the need for a placeholder variable, in a fairly common scenario. Source: https://stackoverflow.com/a/102037
 
-# Unconventional `else` blocks
+## Unconventional `else` blocks
 
 
 ```py
@@ -66,7 +66,7 @@ finally: # always executed
 
 Note that every block besides "try" itself is optional - but you must have at least one of them to create a valid "try" clause - and you need at least one "except" block though to use "else". This means you can have only a try-finally or a simple try-except.
 
-# Zen of Python
+## Zen of Python
 
 ```py
 import this
