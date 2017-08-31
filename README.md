@@ -27,6 +27,29 @@ True is False == False #False
 
 Source: https://stackoverflow.com/a/101945
 
+## Dictionary comprehension
+
+```py
+class Person:
+    def __init__(self,name,email,age):
+        self.name=name
+        self.email=email
+        self.age=age
+    def __repr__(self):
+        return "User "+self.name
+       
+alice=Person('Alice','alice@python.org','20')
+bob=Person('Bob','bob@python.org','30')
+eve=Person('Eve','eve@python.org','40')
+people=[alice,bob,eve]
+people_by_email={person.email: person for person in people}
+print(people_by_email)
+
+# prints: {'bob@python.org': User Bob, 'eve@python.org': User Eve, 'alice@python.org': User Alice}
+```
+
+List comprehensions are quite common but not all Python coders know that you can use pretty much the same syntax to work with dictionaries! 
+
 ## In-place value swapping
 
 ```py
