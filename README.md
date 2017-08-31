@@ -8,6 +8,8 @@ On the other hand, sometimes these can greatly simplify the solution to a proble
 
 Feel free to submit [a new issue to this project's tracker](https://github.com/tukkek/notablepython/issues/new) or a pull request if you feel like I have missed out on something. However, keep in mind that I have to draw the line between "underutilized" and "standard" Python somewhere, which is why you won't see things such as annotations or generators being discussed here, even though a lot of begginer Python coders would find them to be somewhat esoteric upon first encountering them, especially if they're coming from older languages or just now learning how to code.
 
+This document is up-to-date with **Python 3.7**.
+
 # Chaining comparison operators
 
 ```py
@@ -25,6 +27,34 @@ True is False == False #False
 
 Source https://stackoverflow.com/a/101945
 
+# Unconventional `else` blocks
+
+
+```py
+def does_exists_num(list, to_find):
+      for num in list:
+          if num == to_find:
+              print("Exists!")
+              break
+      else: # executed if "break" above isn't reached
+          print("Does not exist") 
+```
+
+
+```py
+try: #run some code
+    print(mymap['mykey'])
+except KeyError as e: # executed only if "try" block throws a KeyError exception
+    print("KeyError thrown: "+str(e))
+except: # executed only if "try" block throws any other exception type
+    print("Other exception type thrown: "+str(e))
+else: # executed only if "try" block does not throw any exception
+    print("Try block executed successfully.")
+finally: # always executed
+    print('Done.') 
+```
+
+Note that every block besides "try" itself is optional - but you must have at least one of them to create a valid "try" clause - and you need at least one "except" block though to use "else". This means you can have only a try-finally or a simple try-except.
 
 # Acknowledgments
 
