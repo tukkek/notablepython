@@ -37,6 +37,23 @@ print(a,b) # prints "2 1"
 
 Simple trick but removes the need for a placeholder variable, in a fairly common scenario. Source: https://stackoverflow.com/a/102037
 
+## List slice assignment
+
+```py
+a=list(range(1,10))
+print(a) #prints: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+a[1:-1]=[-x for x in a[1:-1]]
+print(a) #prints: [1, -2, -3, -4, -5, -6, -7, -8, 9]
+a[1:]=['b','c','d']
+print(a) #prints: [1, 'b', 'c', 'd']
+a[-1:]=['d','e','f','g']
+print(a) #[1, 'b', 'c', 'd', 'e', 'f', 'g']
+a[1:-1]=[]
+print(a) #prints: [1, 'g']
+```
+
+Turns out list slicing syntax is not only useful for reading lists but also for writing to them! Source: http://sahandsaba.com/thirty-python-language-features-and-tricks-you-may-not-know.html
+
 ## Unconventional `else` blocks
 
 
