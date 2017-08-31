@@ -6,7 +6,7 @@ Keep in mind, however, that there is a reason why some of these are not found ou
 
 On the other hand, sometimes these can greatly simplify the solution to a problem or speed up its execution - or maybe you're just writing code for yourself and you don't care about readibility issues since no one else will be looking at it. Anyway, Python is very meticulous about introducing syntax into the language itself so even if it's new, most of the time it shouldn't be too esoteric for anyone to figure out what is happening... especially if you include a comment with a link to this document, perhaps ;)
 
-Feel free to submit [a new issue to this project's tracker](https://github.com/tukkek/notablepython/issues/new) or a pull request if you feel like I have missed out on something. However, keep in mind that I have to draw the line between "underutilized" and "standard" Python somewhere, which is why you won't see things such as annotations or generators being discussed here, even though a lot of begginer Python coders would find them to be somewhat esoteric upon first encountering them, especially if they're coming from older languages or just now learning how to code.
+Feel free to submit [a new issue to this project's tracker](https://github.com/tukkek/notablepython/issues/new) or a pull request if you feel like I have missed out on something. However, keep in mind that I have to draw the line between "underutilized" and "standard" Python somewhere, which is why you won't see things such as decorators or generators being discussed here, even though a lot of begginer Python coders would find them to be somewhat esoteric upon first encountering them, especially if they're coming from older languages or just now learning how to code.
 
 This document is up-to-date with **Python 3.7**.
 
@@ -84,6 +84,16 @@ print(a) #prints: [1, 'g']
 ```
 
 Turns out list slicing syntax is not only useful for reading lists but also for writing to them! Source: http://sahandsaba.com/thirty-python-language-features-and-tricks-you-may-not-know.html
+
+## Multiplying strings by booleans
+
+```py
+css_class='button_selected' if selected else ''
+css_class='selected'*selected
+button='<button value="Click me" class="{}"/>'.format(css_class)
+```
+
+In the above example both methods of defining the `css_class` string are equivalent. This simple hack is useful in a number of scenarios and works because in Python booleans are a subclass of integer (`assert isinstance(True,int)`), with `True` resolving to 1 and `False` resolving to 0. Source: https://stackoverflow.com/a/1853593
 
 ## Unconventional `else` blocks
 
