@@ -35,6 +35,25 @@ True is False == False #False
 
 Source: https://stackoverflow.com/a/101945
 
+## Console formatting for strings
+
+```py
+hello='hello world'
+print(hello.ljust(20,'-'))
+print(hello.center(20,'.'))
+print(hello.rjust(20))
+
+'''
+Prints:
+
+hello world---------
+....hello world.....
+         hello world
+'''
+```
+
+These 3 methods are useful for any type of diplay that uses fixed-width fonts. They are also available with [bytes and bytearrays](https://docs.python.org/3/library/stdtypes.html#bytes-and-bytearray-operations).
+
 ## Dictionary comprehension
 
 ```py
