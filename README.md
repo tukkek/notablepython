@@ -10,6 +10,14 @@ Feel free to submit [a new issue to this project's tracker](https://github.com/t
 
 This document is up-to-date with **Python 3.7**.
 
+## Built-in HTTP server
+
+From a terminal you can execute this command to start a HTTP server which serves the content of the current working directory (usually the one you are in when executing the command itself): `python3 -m http.server`. The equivalent command for Python 2 is `python2 -m SimpleHTTPServer 8000`. You can then access it by directing your browser (or any other program) to `localhost:8000`.
+
+Not anywhere near feature-complete but extremely useful in certain situations or for very simple tasks, if only due to the fact that it's built-in into Python itself, making it very easy to boot. You can also access the server programatically if you need more control, just read the [package documentation](https://docs.python.org/3.7/library/http.server.html?highlight=http%20server#module-http.server). Needless to say, this server is not to be used in production or for public-facing purposes.
+
+Source: http://sahandsaba.com/thirty-python-language-features-and-tricks-you-may-not-know.html
+
 ## Chaining comparison operators
 
 ```py
