@@ -8,6 +8,24 @@ On the other hand, sometimes these can greatly simplify the solution to a proble
 
 Feel free to submit [a new issue to this project's tracker](https://github.com/tukkek/notablepython/issues/new) or a pull request if you feel like I have missed out on something. However, keep in mind that I have to draw the line between "underutilized" and "standard" Python somewhere, which is why you won't see things such as annotations or generators being discussed here, even though a lot of begginer Python coders would find them to be somewhat esoteric upon first encountering them, especially if they're coming from older languages or just now learning how to code.
 
+# Chaining comparison operators
+
+```py
+x = 5
+1 < x < 10 #True
+10 < x < 20 #False
+x < 10 < x*10 < 100 #True
+```
+
+Taking the first comparison as an example, the way this works is equivalent to `(1 < x) and (x < 10)`. Note, however that this can create some counter-intuitive cases if abused, like the one below:
+
+```py
+True is False == False #False
+```
+
+Source https://stackoverflow.com/a/101945
+
+
 # Acknowledgments
 
 I'd like to thank Satwik Kansal for the [What the f\*ck, Python?](https://github.com/satwikkansal/wtfPython) project. I have started this reference a couple of times in the past but seeing how neatly and enjoyable his own documentation was, it renewed my focus to get this done and hopefully be as fun/useful to read as his own was!
