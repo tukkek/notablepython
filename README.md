@@ -19,7 +19,7 @@ x = 5
 x < 10 < x*10 < 100 #True
 ```
 
-Taking the first comparison as an example, the way this works is equivalent to `(1 < x) and (x < 10)`. Note, however that this can create some counter-intuitive cases if abused, like the one below:
+The way this works is that `a == b == c` equivalent to `(a and b) and (b and c)`. Note, however that this can create some counter-intuitive cases if abused, like the one below:
 
 ```py
 True is False == False #False
