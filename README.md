@@ -193,6 +193,7 @@ This section covers, in brief, lesser-known methods and libraries that, while le
 ** **[JSON](https://docs.python.org/3/library/json.html)**
 ** **[XML](https://docs.python.org/3/library/xml.html)**
 * **[pickle](https://docs.python.org/3/library/pickle.html)** - object serialization, complemented by [shelve](https://docs.python.org/3/library/shelve.html#module-shelve) for data persistence.
+* **[Requests](http://docs.python-requests.org/en/master/)** - de-facto HTTP library for Python. Third-party library to replace most of the the standard [urllib](https://docs.python.org/3/library/urllib.html) module's functionality.
 * **[statistics](https://docs.python.org/3/library/statistics.html)** - offers default implementations of things like `mean()` and `median()`.
 
 # Acknowledgments
