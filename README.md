@@ -178,7 +178,7 @@ More of an easter egg but a very wise one, at that :) It will output the content
 
 This section covers, in brief, lesser-known methods and libraries that, while less notable or not part of the standard Python distribution, can still be very helpful for one reason or another.
 
-* **[argparse](https://docs.python.org/3/library/argparse.html)** - framework for handling command-line arguments.
+* **[argparse](https://docs.python.org/3/library/argparse.html)** - framework for handling command-line arguments. [getopt](https://docs.python.org/3/library/getopt.html) allows for doing the same with a C-style approach.
 * **[copy](https://docs.python.org/3/library/copy.html)** - object cloning module.
 * **[Comparison utilities]** - [filecmp](https://docs.python.org/3/library/filecmp.html) for files and directories and [difflib](https://docs.python.org/3/library/difflib.html) for text.
 * **[configparser]** - easily read from and write to user-facing configuration files.
