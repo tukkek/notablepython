@@ -11,6 +11,7 @@ Feel free to submit [a new issue to this project's tracker](https://github.com/t
 This document is up-to-date with **Python 3.6.2**.
 
 - [Notable Python features](#notable-python-features)
+  * [Boolean arithmetic](#boolean-arithmetic)
   * [Built-in HTTP server](#built-in-http-server)
   * [Chaining comparison operators](#chaining-comparison-operators)
   * [Contatenating strings](#contatenating-strings)
@@ -20,11 +21,33 @@ This document is up-to-date with **Python 3.6.2**.
   * [In-place value swapping](#in-place-value-swapping)
   * [List slice assignment](#list-slice-assignment)
   * [Multi-line strings](#multi-line-strings)
-  * [Multiplying strings by booleans](#multiplying-strings-by-booleans)
   * [Unconventional else blocks](#unconventional-else-blocks)
   * [Zen of Python](#zen-of-python)
 - [Honorable mentions](#honorable-mentions)
 - [Acknowledgments](#acknowledgments)
+
+## Boolean arithmetic
+
+```py
+css_class='button_selected' if selected else ''
+css_class='button_selected'*selected
+html_button='<button type="button" class="{}">Click Me!</button>'.format(css_class)
+```
+
+In the example above both ways of defining the `css_class` string are equivalent. The second method is useful in a number of scenarios and works because in Python booleans are a subclass of integers (`assert isinstance(True,int)`), with `True` resolving to 1 and `False` resolving to 0. 
+
+Source: https://stackoverflow.com/a/1853593
+
+```py
+text = 'Some example data'
+vowels = 'aeiou'
+vowel_count = sum(char in vowels for char in text)
+print(vowel_count) #prints: 7
+```
+
+This other snippet works because the generator function used with `sum()` supplies a boolean result for each execution of `char in vowels` (once per character in the given text). `sum()` then goes to treat each of those as either a 0 or a 1, finding the total count.
+
+Source: https://www.reddit.com/r/Python/comments/6xc33n/notable_python_collection_of_lesser_known_python/dmg24zj/
 
 ## Built-in HTTP server
 
@@ -165,18 +188,6 @@ sql = ('select * from some_table '
 Usually, when asked about formatting long strings, people will refer you to the triple-quote syntax (first example above). However, this has the substantial downside of taking all that whitespace (and newline characters) into your string. Sometimes this has no impact at all but on other times it makes your output nigh impossible to read later on - if you are trying to write HTML, for example. You shouldn't have to choose between beautiful, easy-to-read code at the source level or at the final output level, so using the parenthesis notation can be a real helper in such situations!
 
 Source: https://stackoverflow.com/a/3342952
-
-## Multiplying strings by booleans
-
-```py
-css_class='button_selected' if selected else ''
-css_class='button_selected'*selected
-html_button='<button type="button" class="{}">Click Me!</button>'.format(css_class)
-```
-
-In the example above both ways of defining the `css_class` string are equivalent. The second method is useful in a number of scenarios and works because in Python booleans are a subclass of integers (`assert isinstance(True,int)`), with `True` resolving to 1 and `False` resolving to 0. 
-
-Source: https://stackoverflow.com/a/1853593
 
 ## Unconventional "else" blocks
 
