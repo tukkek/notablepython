@@ -179,6 +179,7 @@ More of an easter egg but a very wise one, at that :) It will output the content
 This section covers, in brief, lesser-known methods and libraries that, while less notable or not part of the standard Python distribution, can still be very helpful for one reason or another.
 
 * **[copy](ttps://docs.python.org/3/library/copy.html)** - object cloning module.
+* **[Comparison utilities]** - [filecmp](https://docs.python.org/3/library/filecmp.html) for files and directories and [difflib](https://docs.python.org/3/library/difflib.html) for text.
 * **[Counter dictionary](https://docs.python.org/3/library/collections.html#collections.Counter)** - counts the number of occurances of items in other collections.
 * **[decimal](https://docs.python.org/3/library/decimal.html)** - precise decimal [Numbers](https://docs.python.org/3/library/numbers.html).
 * **[difflib.get_close_matches()](https://docs.python.org/3/library/difflib.html#difflib.get_close_matches)** - can auto-correct user input (such as program arguments) on non-critical use cases.
