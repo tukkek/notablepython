@@ -49,7 +49,7 @@ The way this works is that `a == b == c` is equivalent to `(a and b) and (b and 
 True is False == False #False
 ```
 
-Source: https://stackoverflow.com/a/101945
+Sources: [Official Python documentation](https://docs.python.org/3/tutorial/datastructures.html#more-on-conditions), [Stack Overflow](https://stackoverflow.com/a/101945).
 
 ## Contatenating strings
 
