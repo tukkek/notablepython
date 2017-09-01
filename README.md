@@ -180,6 +180,7 @@ This section covers, in brief, lesser-known methods and libraries that, while le
 
 * **[copy](ttps://docs.python.org/3/library/copy.html)** - object cloning module.
 * **[Counter dictionary](https://docs.python.org/3/library/collections.html#collections.Counter)** - counts the number of occurances of items in other collections.
+* **[decimal](https://docs.python.org/3/library/decimal.html)** - precise decimal [Numbers](https://docs.python.org/3/library/numbers.html).
 * **[difflib.get_close_matches()](https://docs.python.org/3/library/difflib.html#difflib.get_close_matches)** - can auto-correct user input (such as program arguments) on non-critical use cases.
 * **[enum](https://docs.python.org/3/library/enum.html)** - Python version of enumerations. Allows creation through subclassing or via a function call. Supports [pickle](https://docs.python.org/3/library/pickle.html) serialization.
 
