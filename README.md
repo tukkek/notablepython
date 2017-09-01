@@ -182,12 +182,16 @@ This section covers, in brief, lesser-known methods and libraries that, while le
 * **[copy](https://docs.python.org/3/library/copy.html)** - object cloning module.
 * **[Comparison utilities]** - [filecmp](https://docs.python.org/3/library/filecmp.html) for files and directories and [difflib](https://docs.python.org/3/library/difflib.html) for text.
 * **[Concurrency](https://docs.python.org/3/library/concurrency.html)** - overview of the many approaches to parallelism in Python.
-* **[configparser]** - easily read from and write to user-facing configuration files.
 * **[Counter dictionary](https://docs.python.org/3/library/collections.html#collections.Counter)** - counts the number of occurances of items in other collections.
 * **[curses](https://docs.python.org/3/library/curses.html)** - build advanced terminal-based user interfaces (or roguelikes).
 * **[decimal](https://docs.python.org/3/library/decimal.html)** - precise decimal [Numbers](https://docs.python.org/3/library/numbers.html).
 * **[difflib.get_close_matches()](https://docs.python.org/3/library/difflib.html#difflib.get_close_matches)** - can auto-correct user input (such as program arguments) on non-critical use cases.
 * **[enum](https://docs.python.org/3/library/enum.html)** - Python version of enumerations. Allows creation through subclassing or via a function call. Supports pickle (see next).
+* **File format support:**
+** **[configparser](https://docs.python.org/3/library/configparser.html)** - easily read from and write to user-facing configuration files (.ini).
+** **[HTML](https://docs.python.org/3/library/html.html)**
+** **[JSON](https://docs.python.org/3/library/json.html)**
+** **[XML](https://docs.python.org/3/library/xml.html)**
 * **[pickle](https://docs.python.org/3/library/pickle.html)** - object serialization, complemented by [shelve](https://docs.python.org/3/library/shelve.html#module-shelve) for data persistence.
 * **[statistics](https://docs.python.org/3/library/statistics.html)** - offers default implementations of things like `mean()` and `median()`.
 
