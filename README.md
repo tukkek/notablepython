@@ -81,7 +81,7 @@ hello world---------
 '''
 ```
 
-These 3 methods are useful for any type of diplay that uses fixed-width fonts. They are also available with [bytes and bytearrays](https://docs.python.org/3/library/stdtypes.html#bytes-and-bytearray-operations). If you need to further wrap the text, there is [a module](https://docs.python.org/3/library/textwrap.html) just for that.
+These 3 methods are useful for any type of display that uses fixed-width fonts. They are also available with [bytes and bytearrays](https://docs.python.org/3/library/stdtypes.html#bytes-and-bytearray-operations). If you need to further wrap the text, there is [a module](https://docs.python.org/3/library/textwrap.html) just for that.
 
 Python also exposes [an interface to the curses library](https://docs.python.org/3/library/curses.html), which is the de-facto way to create complex, responsive terminal-based user interfaces.
 
@@ -162,7 +162,7 @@ sql = ('select * from some_table '
        'order by name') 
 ```
 
-Usually, when asked about formatting long strings, people will refer you to the triple-quote syntax (first example above). However, this has the substantial downside of taking all that whitespace (and newline characters) into your string. Sometimes this has no impact at all but on other times it makes your output nigh impossible to read later on - if you are trying to write HTML, for example. You shouldn't have to choose between beautiful, easy-to-read code at the source level or at the final output level, so using the parenthesis notation can be a real helper in such situations. 
+Usually, when asked about formatting long strings, people will refer you to the triple-quote syntax (first example above). However, this has the substantial downside of taking all that whitespace (and newline characters) into your string. Sometimes this has no impact at all but on other times it makes your output nigh impossible to read later on - if you are trying to write HTML, for example. You shouldn't have to choose between beautiful, easy-to-read code at the source level or at the final output level, so using the parenthesis notation can be a real helper in such situations!
 
 Source: https://stackoverflow.com/a/3342952
 
@@ -174,7 +174,7 @@ css_class='button_selected'*selected
 html_button='<button type="button" class="{}">Click Me!</button>'.format(css_class)
 ```
 
-In the above example both methods of defining the `css_class` string are equivalent. This simple method is useful in a number of scenarios and works because in Python booleans are a subclass of integers (`assert isinstance(True,int)`), with `True` resolving to 1 and `False` resolving to 0. 
+In the example above both ways of defining the `css_class` string are equivalent. The second method is useful in a number of scenarios and works because in Python booleans are a subclass of integers (`assert isinstance(True,int)`), with `True` resolving to 1 and `False` resolving to 0. 
 
 Source: https://stackoverflow.com/a/1853593
 
@@ -218,7 +218,7 @@ More of an easter egg than anything else - but a very wise one, at that :) It wi
 
 # Honorable mentions
 
-This section covers, in brief, lesser-known methods and libraries that, while less notable or not part of the standard Python distribution, can still be very helpful for one reason or another.
+This section covers, in brief, specific solutions that can be very helpful for specific situations or uses.
 
 * **[argparse](https://docs.python.org/3/library/argparse.html)** - framework for handling command-line arguments. [getopt](https://docs.python.org/3/library/getopt.html) allows for doing the same with a C-style approach.
 * **[copy](https://docs.python.org/3/library/copy.html)** - object cloning module.
@@ -230,9 +230,7 @@ This section covers, in brief, lesser-known methods and libraries that, while le
 * **[enum](https://docs.python.org/3/library/enum.html)** - Python version of enumerations. Allows creation through subclassing or via a function call. Supports pickle (see below).
 * **File format support:**
     * **[configparser](https://docs.python.org/3/library/configparser.html)** - easily read from and write to user-facing configuration files (.ini).
-    * **[HTML](https://docs.python.org/3/library/html.html)**
-    * **[JSON](https://docs.python.org/3/library/json.html)**
-    * **[XML](https://docs.python.org/3/library/xml.html)**
+    * **[HTML](https://docs.python.org/3/library/html.html)**,  **[JSON](https://docs.python.org/3/library/json.html)** and **[XML](https://docs.python.org/3/library/xml.html)**.
 * **[pickle](https://docs.python.org/3/library/pickle.html)** - object serialization, complemented by [shelve](https://docs.python.org/3/library/shelve.html#module-shelve) for data persistence.
 * **[Requests](http://docs.python-requests.org/en/master/)** - third-party library to replace most of the the standard [urllib](https://docs.python.org/3/library/urllib.html) module's HTTP functionality.
 * **[Internationalization](https://docs.python.org/3/library/i18n.html)** - helper modules to implement standard i18n and l10n practices, such as adding support for text translations.
