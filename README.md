@@ -35,6 +35,17 @@ True is False == False #False
 
 Source: https://stackoverflow.com/a/101945
 
+## Contatenating strings
+
+```py
+chunks = []
+for s in my_strings:
+    chunks.append(s)
+result = ''.join(chunks)
+```
+
+The exaple above shows the official recommended way of concatenating a large number of strings together when performance is a concern. Source: https://docs.python.org/3/faq/programming.html#what-is-the-most-efficient-way-to-concatenate-many-strings-together
+
 ## Console formatting for strings
 
 ```py
