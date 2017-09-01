@@ -10,6 +10,22 @@ Feel free to submit [a new issue to this project's tracker](https://github.com/t
 
 This document is up-to-date with **Python 3.6.2**.
 
+- [Notable Python features](#notable-python-features)
+  * [Built-in HTTP server](#built-in-http-server)
+  * [Chaining comparison operators](#chaining-comparison-operators)
+  * [Contatenating strings](#contatenating-strings)
+  * [Console formatting for strings](#console-formatting-for-strings)
+  * [Dictionary comprehension](#dictionary-comprehension)
+  * [Generator expressions](#generator-expressions)
+  * [In-place value swapping](#in-place-value-swapping)
+  * [List slice assignment](#list-slice-assignment)
+  * [Multi-line strings](#multi-line-strings)
+  * [Multiplying strings by booleans](#multiplying-strings-by-booleans)
+  * [Unconventional else blocks](#unconventional-else-blocks)
+  * [Zen of Python](#zen-of-python)
+- [Honorable mentions](#honorable-mentions)
+- [Acknowledgments](#acknowledgments)
+
 ## Built-in HTTP server
 
 From a terminal you can execute this command to start a HTTP server which serves the content of the current working directory (usually the one you are in when executing the command itself): `python3 -m http.server`. The equivalent command for Python 2 is `python2 -m SimpleHTTPServer 8000`. You can then access it by directing your browser (or any other program) to `localhost:8000`.
@@ -162,7 +178,7 @@ In the above example both methods of defining the `css_class` string are equival
 
 Source: https://stackoverflow.com/a/1853593
 
-## Unconventional `else` blocks
+## Unconventional "else" blocks
 
 
 ```py
@@ -225,3 +241,5 @@ This section covers, in brief, lesser-known methods and libraries that, while le
 # Acknowledgments
 
 I'd like to thank Satwik Kansal for the [What the f\*ck, Python?](https://github.com/satwikkansal/wtfPython) snippet compilation. I have started this reference a couple of times in the past but seeing how neat and enjoyable his own documentation was, it renewed my focus to get this done and maybe be as fun and useful to read as I found his own project to be!
+
+Table of contents generated with [markdown-toc](http://ecotrust-canada.github.io/markdown-toc/).
