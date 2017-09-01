@@ -43,7 +43,7 @@ x = 5
 x < 10 < x*10 < 100 #True
 ```
 
-The way this works is that `a == b == c` is equivalent to `(a and b) and (b and c)`. Note, however that this can create some counter-intuitive cases if used carelessly, like the one below:
+The way this works is that `a == b == c` is equivalent to `(a == b) and (b == c)`. Note, however that this can create some counter-intuitive cases if used carelessly, like the one below:
 
 ```py
 True is False == False #False
