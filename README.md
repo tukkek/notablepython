@@ -112,7 +112,7 @@ List comprehensions are quite common but not all Python coders know that you can
 
 ```py
 sum_of_squares=sum(x*x for x in range(10))
-words=Set(word for line in page for word in line.split())
+words=set(word for line in page for word in line.split())
 ```
 
 Generator expressions look a whole lot like list comprehensions but instead of using bracket syntax, they have parenthesis around them (which can be omitted a lot of the time, such as in the examples above). Their main advantage is that since they produce a [generator](https://wiki.python.org/moin/Generators) instead of a list, they don't have to instantiate and populate an object ahead of time, working instead as a lazy iterator function. Depending on what you are trying to do, it could have a major impact in your memory usage and overall performance - for that reason, whenever possible, you should use generator expressions instead of list comprehensions. Thankfully they are pretty easy to convert to and from! 
