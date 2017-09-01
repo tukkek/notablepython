@@ -181,6 +181,7 @@ This section covers, in brief, lesser-known methods and libraries that, while le
 * **[argparse](https://docs.python.org/3/library/argparse.html)** - framework for handling command-line arguments. [getopt](https://docs.python.org/3/library/getopt.html) allows for doing the same with a C-style approach.
 * **[copy](https://docs.python.org/3/library/copy.html)** - object cloning module.
 * **[Comparison utilities]** - [filecmp](https://docs.python.org/3/library/filecmp.html) for files and directories and [difflib](https://docs.python.org/3/library/difflib.html) for text.
+* **[Concurrency](https://docs.python.org/3/library/concurrency.html)** - overview of the many approaches to parallelism in Python.
 * **[configparser]** - easily read from and write to user-facing configuration files.
 * **[Counter dictionary](https://docs.python.org/3/library/collections.html#collections.Counter)** - counts the number of occurances of items in other collections.
 * **[curses](https://docs.python.org/3/library/curses.html)** - build advanced terminal-based user interfaces (or roguelikes).
