@@ -208,19 +208,19 @@ print(alice) #prints: User Alice
 print(alice.name) #prints: Alice
 ```
 
-The first way of structuring data shown is creating a class. Using classes has major benefits, such as mixing data and functionality (as seen in the `is_minor` method here), allowing you to create a sub-class hierarchy, acessing special methods (such as `__repr__`, shown above), providing getters and setters, constructors... explaining the object-orietned programming paradigm is out of the scope of this document but you can [read more about it here](https://docs.python.org/3/tutorial/classes.html).
+The first way of structuring data shown here is creating a class. Using classes has major benefits, such as mixing data and functionality (as seen in the `is_minor` method); allowing you to create a sub-class hierarchy; making use of 'magic" methods (such as `__repr__`, shown above); providing getters and setters; constructors... explaining the object-oriented programming paradigm is out of the scope of this document but you can [read more about it here](https://docs.python.org/3/tutorial/classes.html).
 
 ```py
 from collections import namedtuple
-User = namedtuple('User', 'name email age')
-bob = User('Bob', 'bob@python.org', 30)
-print(bob) #prints: User(name='Bob', email='bob@python.org', age=30)
+Person = namedtuple('Person', 'name email age')
+bob = Person('Bob', 'bob@python.org', 30)
+print(bob) #prints: Person(name='Bob', email='bob@python.org', age=30)
 print(bob.name) #prints: Bob
 ```
 
-Named tuples offer a much more concise way of representing your data. However, as all Python tuples, they are read-only. The method [namedtuple()](https://docs.python.org/3/library/collections.html#namedtuple-factory-function-for-tuples-with-named-fields) actually returns a class, so you can actually extend it in a new subclass to add more functionality - though adding new data fields manually is discouraged.
+Named tuples offer a much more concise way of representing your data. However, as all Python tuples, they are read-only. The method [namedtuple()](https://docs.python.org/3/library/collections.html#namedtuple-factory-function-for-tuples-with-named-fields) actually returns a class (notice the uppercase `Person` identifier), so you can actually extend it in a new subclass to add more functionality, if needed (though adding new data fields manually is discouraged).
 
-This method allows you to define the tuple structure once and create multiple instances of it (because, again, it is just a short-hand class definition). It also makes sure that these objects can only be created by providing a value to every declared field, providing an error otherwise. For these exact reasons, this is very useful to create in-memory representations of things like database query results, with the named tuple itself representing the table structure and each instance representing an entry (in the case of a relational database query).
+This method allows you to define the tuple structure once and create multiple instances of it (because, again, it is just a short-hand class definition). It also makes sure that these objects can only be created by providing a value to every declared field, raising an error otherwise. For these exact reasons, this is very useful to create in-memory representations of things like database query results, with the named tuple itself representing the table structure and each instance representing an entry (in the case of a relational database query).
 
 ```py
 carol = dict(name='Carol', email='carol@python.org', age=40)
@@ -229,17 +229,17 @@ print(carol) #prints: {'age': 40, 'email': 'carol@python.org', 'name': 'Carol'}
 print(carol['name']) #prints: Carol
 ```
 
-The simplest and perhaps most pythonic example is simply using a dictionary to represent your data. Note that both notations produce identical results.
+The simplest and perhaps most pythonic example is simply using a dictionary to represent your data. Note that both notations above produce identical results.
 
-Of the benefits of using a dictionary to holding your data, first comes its simplicity. Second, the fact that dictionaries have excellent support in Python, which allows you to easily use them in a myriad of built-in (and third-party) methods seamlessly. They are also mutable and allow adding or removing data fields at any point of their life-cycle.
+Of the benefits of using a dictionary to holding your data, first comes its simplicity. Second, the fact that dictionaries have excellent support in Python, which allows you to easily use them in a myriad of built-in (and third-party) methods seamlessly. They are also mutable and allow mofidying the values of fields and adding or removing fields at any point of their life-cycle.
 
-Its main disadvantage is that you have no integrated data safety: it's easy to forget or mistype a data field name if you're trying to create more than one instance of each data type (in our example here, mora than one `Person`). They are also hard to maintain in the long run: it's much easier to remove a field from a class or a named tuple and have errors be thrown immediately when non-conforming cases attempt to be created, making sure your code is safe as long as your structure definition is correct.
+Its main disadvantage is that you have no integrated data safety: it's easy to forget or mistype a data field name if you're trying to create more than one instance of each data type (in our example here, mora than one `Person`), resulting in errors that are hard to identify and resolve. They are also difficult to maintain in the long run: it's much easier to remove a field from a class or a named tuple and have errors be thrown immediately when non-conforming cases attempt to be created - making sure your code is safe as long as your structure definition is correct.
 
-**Which one do I use, then?** One of the rules of Python code is that, ideally "there should only be one way to do something" - which brings the quesiton, why are there so many ways of structuring my data? My recommendations are:
+**Which one do I use, then?** One of the rules of Python code is that, ideally "there should only be one way to do something" - which brings the question: why are there so many ways of structuring my data? The answer is that each has its own use cases:
 
-* If you're only going to use that data inside a single function, module or script use **dictionaries** as they are simpler and more pythonic. This should only be an options if type safety is not an issue for you - for example, if all yours data instances are created from a single loop, ensuring that there is no chance at all of you mistyping your data format in another location.
-* If you need type safety or you are planning on creating many instances of this data type across your code, use **named tuples**. They are declared once and can be used everywhere after that (as long as you keep the returned referece easily accessible in your code). The downside is that tuples aren't mutable so if you need to change your data after creation, this isn't an option for you.
-* If your data type is a central model unit for you project, evne if it's simple, even it's non-mutable, define and use a **class** aroudn it. This allows you much more flexiblity in the future: be it an hour from now when you realize you need to make sure a certain string field is always lowercase, or an year from now when you realize that you're going to have to work with, not one, but six different types of the same data, each of them behaving differently in each situation and possibly having additional fields, etc.
+* If you're only going to use that data inside a single function, module or script use **dictionaries** as they are simpler and more pythonic. This should only be an option if type safety is not an issue for you - for example, if all your data instances are created from a single loop, ensuring that there is no chance at all of you mistyping your data format in another location. Dictionaries are also the only method that allows you to add or remove data field after an instance has been created.
+* If you need type safety or you are planning on creating many instances of this data type across your code, use **named tuples**. They are declared once and can be used anywhere after that (as long as you keep the returned referece easily accessible in your code). The downside is that tuples aren't mutable so if you need to change your data after creation, this isn't an option for you.
+* If your data type is a central part of a larger project (even if it's simple and non-mutable data) define and use a **class** for it. This allows you much more flexiblity in the future: be it an hour from now when you realize you need to make sure a certain string field is always lowercase; or a year from now when you realize that you're going to have to work with not one but six different types of the same data, each of them behaving differently in each situation and possibly having additional fields, etc.
 
 ## Unconventional "else" blocks
 
