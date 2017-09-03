@@ -14,7 +14,7 @@ This document is up-to-date with **Python 3.6.2**.
   * [Boolean arithmetic](#boolean-arithmetic)
   * [Built-in HTTP server](#built-in-http-server)
   * [Chaining comparison operators](#chaining-comparison-operators)
-  * [Concatening strings](#concatening-strings)
+  * [Concatenating strings](#concatenating-strings)
   * [Console formatting for strings](#console-formatting-for-strings)
   * [Dictionary comprehensions](#dictionary-comprehensions)
   * [Formatting strings](#formatting-string)
