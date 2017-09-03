@@ -16,6 +16,7 @@ This document is up-to-date with **Python 3.6.2**.
   * [Chaining comparison operators](#chaining-comparison-operators)
   * [Concatenating strings](#concatenating-strings)
   * [Console formatting for strings](#console-formatting-for-strings)
+  * [Context manager decorations](#context-manager-decorations)
   * [Dictionary comprehensions](#dictionary-comprehensions)
   * [Formatting strings](#formatting-strings)
   * [Generator expressions](#generator-expressions)
@@ -109,6 +110,48 @@ hello world---------
 These 3 methods are useful for any type of display that uses fixed-width fonts. They are also available with [bytes and bytearrays](https://docs.python.org/3/library/stdtypes.html#bytes-and-bytearray-operations). If you need to further wrap the text, there is [a module](https://docs.python.org/3/library/textwrap.html) just for that.
 
 Python also exposes [an interface to the curses library](https://docs.python.org/3/library/curses.html), which is the de-facto way to create complex, responsive terminal-based user interfaces.
+
+## Context manager decorations
+
+```py
+from contextlib import contextmanager
+
+@contextmanager
+def context_log(module):
+    print('['+module+'] before...')
+    yield module
+    print('['+module+'] after...')
+
+with context_log('Example 1') as module:
+    print('Executing module '+module+'...')
+    
+# Prints:
+# [Example 1] before...
+# Executing module Example 1...
+# [Example 1] after...
+```
+
+Did you know you could declare a [context manager](https://docs.python.org/3/glossary.html#term-context-manager) simply by adding a decoration to a function? This is definitely much less verbose than creating an actual class with the relevant special methods!
+
+
+```py
+@context_log('Example 2')
+def execute_module():
+    print('Executing another module...')
+
+execute_module()
+
+# Prints:
+# [Example 2] before...
+# Executing another module...
+# [Example 2] after...
+```
+
+Now for some real Python-ception! You can use your brand new context manager (which was created using a decorator and a function) as a decorator for another function. Is your mind blown yet...?
+
+In this second case, though, you won't have access to the context variable returned by your manager.
+
+Source: https://docs.python.org/3/whatsnew/3.2.html#contextlib
 
 ## Dictionary comprehensions
 
