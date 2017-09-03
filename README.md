@@ -131,6 +131,8 @@ List comprehensions are quite common but not all Python coders know that you can
 name = 'Fred'
 language = 'Python'
 print(f'{name} likes to write code in {language}.')
+
+# prints: Fred likes to write code in Python.
 ```
 
 One of the few things that have changed a lot in the language is how to format strings. Besides constructinrg your own strings manually, in Python 2 you had to use the `%` operator if you wanted structured output, which was then replaced in 2.6 with the more pythonic [string.format()](https://docs.python.org/3/library/stdtypes.html#str.format) method (which in turn is a delegate for [object.__format__](https://docs.python.org/3.6/reference/datamodel.html#object.__format__)). When Python 3 came out the format operator (`%`) was even removed from the language itself as it was deemed unelegant. 
