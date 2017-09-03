@@ -16,7 +16,7 @@ This document is up-to-date with **Python 3.6.2**.
   * [Chaining comparison operators](#chaining-comparison-operators)
   * [Contatenating strings](#contatenating-strings)
   * [Console formatting for strings](#console-formatting-for-strings)
-  * [Dictionary comprehension](#dictionary-comprehension)
+  * [Dictionary comprehensions](#dictionary-comprehensions)
   * [Generator expressions](#generator-expressions)
   * [In-place value swapping](#in-place-value-swapping)
   * [List slice assignment](#list-slice-assignment)
@@ -109,7 +109,7 @@ These 3 methods are useful for any type of display that uses fixed-width fonts. 
 
 Python also exposes [an interface to the curses library](https://docs.python.org/3/library/curses.html), which is the de-facto way to create complex, responsive terminal-based user interfaces.
 
-## Dictionary comprehension
+## Dictionary comprehensions
 
 ```py
 alice=dict(name='Alice',email='alice@python.org',age='20')
