@@ -135,9 +135,18 @@ print(f'{name} likes to write code in {language}.')
 # prints: Fred likes to write code in Python.
 ```
 
-One of the few things that have changed a lot in the language is how to format strings. Besides constructinrg your own strings manually, in Python 2 you had to use the `%` operator if you wanted structured output, which was then replaced in 2.6 with the more pythonic [string.format()](https://docs.python.org/3/library/stdtypes.html#str.format) method (which in turn is a delegate for [`object.__format__()`](https://docs.python.org/3.6/reference/datamodel.html#object.__format__)). Both of these methods, although very similar to the classic C `printf()` function, could easily lead to long lines, especially when working with a complex formatter or one that contains more than a few variables. 
+One of the few things that have changed a lot in the language is how to format strings. Besides constructinrg your own strings manually, in Python 2 you had to use the `%` operator if you wanted structured output, which was then replaced in 2.6 with the more pythonic [string.format()](https://docs.python.org/3/library/stdtypes.html#str.format) method (which in turn is a delegate for [`object.__format__()`](https://docs.python.org/3.6/reference/datamodel.html#object.__format__)). Both of these methods, although very similar to the classic C `printf()` function, could easily lead to long, messy lines - especially when working with a complex formatter or one that contains more than a few variables. 
 
-Thankfully, as of Python 3.6, a new type of built-in string called a Formatted String Literal (declared by using `f''`) goes to solve this issue. The string will automatically format a new string, as per [the usual formatting syntax](https://docs.python.org/3/library/string.html#formatstrings) - except it takes no method calls or arguments, simply using, by name, the variables available in the current context. This goes a long way to improve readibility - resulting in a much cleaner vertical style (more and shorter lines) than the previous syntax which often produced horizontal code (one very long line).
+Thankfully, as of Python 3.6, a new type of built-in string called a Formatted String Literal (declared by using `f''`) goes to solve this issue. The string will automatically format a new string, as per [the usual formatting syntax](https://docs.python.org/3/library/string.html#formatstrings) - except it takes no method calls or arguments, simply using, by name, the variables available in the current context. This goes a long way to improve readibility - resulting in a much cleaner vertical style (more and shorter lines) than the previous syntax in which it was easy to produce hard-to-read horizontal code (one very long line).
+
+```py
+numbers=[5,1,9,40,356,18]
+print(f'Highest value in list: {max(numbers)}') #prints: Highest value in list: 356
+print(f'Number of elements in list: {len(numbers)}') #prints: Number of elements in list: 6
+print(f'Average value: {sum(numbers)/len(numbers)}') #prints: Average value: 71.5
+```
+
+As you can see, these formatted string literals aren't only a shorthand for formatting named value but in fact can contain any type of Python expression! Note though that this can, again, lead to very long horizontal code if abused.
 
 Source: https://www.python.org/dev/peps/pep-0498
 
