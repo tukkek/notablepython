@@ -112,9 +112,9 @@ Python also exposes [an interface to the curses library](https://docs.python.org
 ## Dictionary comprehensions
 
 ```py
-alice=dict(name='Alice',email='alice@python.org',age='20')
-bob=dict(name='Bob',email='bob@python.org',age='30')
-eve=dict(name='Eve',email='eve@python.org',age='40')
+alice=dict(name='Alice',email='alice@python.org',age=20)
+bob=dict(name='Bob',email='bob@python.org',age=30)
+eve=dict(name='Eve',email='eve@python.org',age=40)
 people=[alice,bob,eve]
 people_by_email={person['email']: person for person in people}
 print(people_by_email.keys()) 
