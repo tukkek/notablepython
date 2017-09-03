@@ -147,9 +147,9 @@ execute_module()
 # [Example 2] after...
 ```
 
-Now for some real Python-ception! You can use your brand new context manager (which was created using a decorator and a function) as a decorator for another function. Is your mind blown yet...?
+Now for some real Python-ception! You can use your brand new context manager (which was created using a decorator and a function) as a decorator for another function... Is your mind blown yet? 
 
-In this second case, though, you won't have access to the context variable returned by your manager.
+In this second case, though, you won't have access to the context variable returned by your manager.since the decoration itself lies outside the function scope.
 
 Source: https://docs.python.org/3/whatsnew/3.2.html#contextlib
 
