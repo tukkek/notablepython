@@ -117,8 +117,9 @@ bob=dict(name='Bob',email='bob@python.org',age='30')
 eve=dict(name='Eve',email='eve@python.org',age='40')
 people=[alice,bob,eve]
 people_by_email={person['email']: person for person in people}
-print(people_by_email.keys()) # prints: dict_keys(['alice@python.org', 'bob@python.org', 'eve@python.org'])
+print(people_by_email.keys()) 
 
+# prints: dict_keys(['alice@python.org', 'bob@python.org', 'eve@python.org'])
 ```
 
 List comprehensions are quite common but not all Python coders know that you can use pretty much the same syntax to work with dictionaries instead! 
