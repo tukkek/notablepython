@@ -21,6 +21,7 @@ This document is up-to-date with **Python 3.6.2**.
   * [In-place value swapping](#in-place-value-swapping)
   * [List slice assignment](#list-slice-assignment)
   * [Multi-line strings](#multi-line-strings)
+  * [Structured data](#structured-data)
   * [Unconventional else blocks](#unconventional-else-blocks)
   * [Zen of Python](#zen-of-python)
 - [Honorable mentions](#honorable-mentions)
@@ -188,6 +189,43 @@ sql = ('select * from some_table '
 Usually, when asked about formatting long strings, people will refer you to the triple-quote syntax (first example above). However, this has the substantial downside of taking all that whitespace (and newline characters) into your string. Sometimes this has no impact at all but on other times it makes your output nigh impossible to read later on - if you are trying to write HTML, for example. You shouldn't have to choose between beautiful, easy-to-read code at the source level or at the final output level, so using the parenthesis notation can be a real helper in such situations!
 
 Source: https://stackoverflow.com/a/3342952
+
+## Structured data
+
+```py
+class Person:
+    def __init__(self,name,email,age):
+        self.name=name
+        self.email=email
+        self.age=age
+    def __repr__(self):
+        return "User "+self.name
+        
+alice=Person('Alice','alice@python.org','20')
+print(alice) #prints: User Alice
+print(alice.name) #prints: Alice
+```
+
+```py
+from collections import namedtuple
+User = namedtuple('User', 'name email age')
+bob = User('Bob', 'bob@python.org', 30)
+print(bob) #prints: User(name='Bob', email='bob@python.org', age=30)
+print(bob.name) #prints: Bob
+```
+
+```py
+from types import SimpleNamespace
+carol = SimpleNamespace(name='Carol', email='carol@python.org', age=40)
+print(carol) #prints: namespace(age=40, email='carol@python.org', name='Carol')
+print(carol.name) #prints: Carol
+```
+
+```py
+dave = dict(name='Dave', email='dave@python.org', age=50)
+print(dave) #prints: {'age': 50, 'email': 'dave@python.org', 'name': 'Dave'}
+print(dave['name']) #prints: Dave
+```
 
 ## Unconventional "else" blocks
 
