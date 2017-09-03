@@ -76,7 +76,7 @@ True is False == False #False
 
 Sources: [Official Python documentation](https://docs.python.org/3/tutorial/datastructures.html#more-on-conditions), [Stack Overflow](https://stackoverflow.com/a/101945).
 
-## Contatenating strings
+## Concatenating strings
 
 ```py
 chunks = []
