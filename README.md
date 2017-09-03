@@ -158,6 +158,15 @@ As you can see, these formatted string literals aren't only a shorthand for form
 
 Source: https://www.python.org/dev/peps/pep-0498
 
+```py
+alice=dict(name='Alice',email='alice@python.org',age=20)
+print('{name} is {age} years old.'.format_map(alice))
+
+# Prints: Alice is 20 years old.
+```
+
+If you want to format strings by using mapping data structures (such as dictionaries), you can go back to the traditional formatted strings and use their [format_map()](https://docs.python.org/3/library/stdtypes.html#str.format_map) function.
+
 ## Generator expressions
 
 ```py
