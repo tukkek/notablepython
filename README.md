@@ -17,7 +17,7 @@ This document is up-to-date with **Python 3.6.2**.
   * [Concatenating strings](#concatenating-strings)
   * [Console formatting for strings](#console-formatting-for-strings)
   * [Dictionary comprehensions](#dictionary-comprehensions)
-  * [Formatting strings](#formatting-string)
+  * [Formatting strings](#formatting-strings)
   * [Generator expressions](#generator-expressions)
   * [In-place value swapping](#in-place-value-swapping)
   * [List slice assignment](#list-slice-assignment)
