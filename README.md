@@ -17,7 +17,7 @@ This document is up-to-date with **Python 3.6.2**.
   * [Formatting strings](#formatting-strings)
   * [Console formatting for strings](#console-formatting-for-strings)
   * [Dictionary comprehensions](#dictionary-comprehensions)
-  * [Formatted string literals](#formatted-string-literals)
+  * [Formatt string literals](#formatted-string-literals)
   * [Generator expressions](#generator-expressions)
   * [In-place value swapping](#in-place-value-swapping)
   * [List slice assignment](#list-slice-assignment)
@@ -141,12 +141,20 @@ Thankfully, as of Python 3.6, a new type of built-in string called a Formatted S
 
 ```py
 numbers=[5,1,9,40,356,18]
-print(f'Highest value in list: {max(numbers)}') #prints: Highest value in list: 356
-print(f'Number of elements in list: {len(numbers)}') #prints: Number of elements in list: 6
-print(f'Average value: {sum(numbers)/len(numbers)}') #prints: Average value: 71.5
+formatted=f'''
+Highest value: {max(numbers)}
+Number of elements: {len(numbers)}
+Average value: {sum(numbers)/len(numbers)}
+'''
+print(formatted)
+
+# Prints:
+# Highest value in list: 356
+# Number of elements in list: 6
+# Average value: 71.5
 ```
 
-As you can see, these formatted string literals aren't only a shorthand for formatting named value but in fact can contain any type of Python expression! Note though that this can, again, lead to very long horizontal code if abused.
+As you can see, these formatted string literals aren't only a shorthand for formatting named value but in fact can contain any type of Python expression!
 
 Source: https://www.python.org/dev/peps/pep-0498
 
