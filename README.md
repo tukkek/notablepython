@@ -359,7 +359,7 @@ More of an easter egg than anything else - but a very wise one, at that :) It wi
 
 # Honorable mentions
 
-This section covers, in brief, tools that can be very helpful for speccific purposes.
+This section covers, in brief, tools that can be very helpful for specific purposes.
 
 * **[argparse](https://docs.python.org/3/library/argparse.html)** - framework for handling command-line arguments. [getopt](https://docs.python.org/3/library/getopt.html) allows for doing the same with a C-style approach.
 * **[copy](https://docs.python.org/3/library/copy.html)** - object cloning module.
