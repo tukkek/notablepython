@@ -316,7 +316,7 @@ Its main disadvantage is that you have no integrated data safety: it's easy to f
 **Which one do I use, then?** One of the rules of Python code is that, ideally, there should only be one way to do something - which brings the question: why are there so many ways of structuring my data? The answer is that each has its own use cases:
 
 * If you're only going to use that data inside a single function, module or script use **dictionaries** as they are simpler and more pythonic. This should only be an option if data safety is not an issue for you - for example, if all your data instances are created from a single loop, ensuring that there is no chance at all of you mistyping your data format in another location. Dictionaries are also the only approach that allows you to add or remove data fields after an instance has been created.
-* If you need data safety or you are planning on creating many instances of this data type across your code, use **named tuples**. They are declared once and can be used anywhere after that (as long as you keep the returned referece easily accessible in your code). The downside is that tuples aren't mutable so if you need to change your data after creation, this isn't an option for you.
+* If you need data safety or you are planning on creating many instances of this data type across your code, use **named tuples**. They are declared once and can be used anywhere after that (as long as you keep the returned reference easily accessible in your code). The downside is that tuples aren't mutable so if you need to change your data after creation, this isn't an option for you.
 * If your data type is a central part of a larger project (even if it's simple and non-mutable data) define and use a **class** for it. This allows you much more flexiblity in the future: be it an hour from now when you realize you need to make sure a certain string field is always lowercase; or a year from now when you realize that you're going to have to work with not one but six different types of the same data, each of them behaving differently in each situation and possibly having additional fields, etc.
 
 ## Unconventional "else" blocks
@@ -359,7 +359,7 @@ More of an easter egg than anything else - but a very wise one, at that :) It wi
 
 # Honorable mentions
 
-This section covers, in brief, specific solutions that can be very helpful for specific situations or uses.
+This section covers, in brief, tools that can be very helpful for speccific purposes.
 
 * **[argparse](https://docs.python.org/3/library/argparse.html)** - framework for handling command-line arguments. [getopt](https://docs.python.org/3/library/getopt.html) allows for doing the same with a C-style approach.
 * **[copy](https://docs.python.org/3/library/copy.html)** - object cloning module.
