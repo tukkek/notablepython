@@ -361,7 +361,7 @@ More of an easter egg than anything else - but a very wise one, at that :) It wi
 
 This section covers, in brief, tools that can be very helpful for specific purposes.
 
-* **[argparse](https://docs.python.org/3/library/argparse.html)** - framework for handling command-line arguments. [getopt](https://docs.python.org/3/library/getopt.html) allows for doing the same with a C-style approach.
+* **[argparse](https://docs.python.org/3/library/argparse.html)** - framework for handling command-line arguments. [getopt](https://docs.python.org/3/library/getopt.html) allows for doing the same with a C-style approach. [docopt](http://docopt.org/) is a third-party library that offers a pythonic [DSL](https://en.wikipedia.org/wiki/Domain-specific_language) for describing your command-line input and options.
 * **[copy](https://docs.python.org/3/library/copy.html)** - object cloning module.
 * **Comparison utilities** - [filecmp](https://docs.python.org/3/library/filecmp.html) for files and directories and [difflib](https://docs.python.org/3/library/difflib.html) for text.
 * **[Concurrency](https://docs.python.org/3/library/concurrency.html)** - overview of the many parallelism approaches in Python.
