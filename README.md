@@ -363,7 +363,7 @@ More of an easter egg than anything else - but a very wise one, at that :) It wi
 
 This section covers, in brief, tools that can be very helpful for specific purposes.
 
-* **[argparse](https://docs.python.org/3/library/argparse.html)** - framework for handling command-line arguments. [getopt](https://docs.python.org/3/library/getopt.html) allows for doing the same with a C-style approach. [docopt](http://docopt.org/) is a third-party library that offers a pythonic [DSL](https://en.wikipedia.org/wiki/Domain-specific_language) for describing your command-line input and options.
+* **[argparse](https://docs.python.org/3/library/argparse.html)** - framework for handling command-line arguments. [getopt](https://docs.python.org/3/library/getopt.html) allows for doing the same with a C-style approach. [docopt](http://docopt.org/) is a pythonic third-party library that offers a [DSL](https://en.wikipedia.org/wiki/Domain-specific_language) for describing your command-line input and options.
 * If the options in the *Structured Data* section aren't enough for you, the **[attrs](http://www.attrs.org/en/stable/examples.html)** third-party module allows for the creation of data classes, supporting validation, conversion, metadata and more!
 * **[copy](https://docs.python.org/3/library/copy.html)** - object cloning module.
 * **Comparison utilities** - [filecmp](https://docs.python.org/3/library/filecmp.html) for files and directories and [difflib](https://docs.python.org/3/library/difflib.html) for text.
