@@ -300,6 +300,8 @@ Named tuples offer a much more concise way of representing your data. However, a
 
 This method allows you to define the tuple structure once and create multiple instances of it (because, again, it is just a short-hand class definition). It also makes sure that these objects can only be created by providing a value to every declared field, raising an error otherwise. For these exact reasons, this is very useful to create in-memory representations of things like database query results, with the named tuple itself representing the table structure and each instance representing an entry (in the case of a relational database query).
 
+There is also a [type-friendly version of namedtuple](https://docs.python.org/3/library/typing.html#typing.NamedTuple) available.
+
 ```py
 carol = dict(name='Carol', email='carol@python.org', age=40)
 carol = {'name':'Carol', 'email':'carol@python.org', 'age':40}
