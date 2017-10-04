@@ -375,9 +375,10 @@ This section covers, in brief, tools that can be very helpful for specific purpo
 * **File format support:**
     * **[configparser](https://docs.python.org/3/library/configparser.html)** - easily read from and write to user-facing configuration files (.ini).
     * **[HTML](https://docs.python.org/3/library/html.html)**,  **[JSON](https://docs.python.org/3/library/json.html)** and **[XML](https://docs.python.org/3/library/xml.html)**.
+* **[Internationalization](https://docs.python.org/3/library/i18n.html)** - helper modules to implement standard i18n and l10n practices, such as adding support for text translations.
 * **[pickle](https://docs.python.org/3/library/pickle.html)** - object serialization, complemented by [shelve](https://docs.python.org/3/library/shelve.html#module-shelve) for data persistence.
 * **[Requests](http://docs.python-requests.org/en/master/)** - third-party library to replace most of the the standard [urllib](https://docs.python.org/3/library/urllib.html) module's HTTP functionality.
-* **[Internationalization](https://docs.python.org/3/library/i18n.html)** - helper modules to implement standard i18n and l10n practices, such as adding support for text translations.
+* The **[secrets](https://docs.python.org/3.6/library/secrets.html#module-secrets)** module allows for generation of tokens, password salt and similar in a secure manner. The official documentation states the `random` module should not be used for secure operations!
 * **[statistics](https://docs.python.org/3/library/statistics.html)** - offers default implementations for things like `mean()` and `median()`.
 
 # Acknowledgments
