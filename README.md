@@ -109,6 +109,8 @@ hello world---------
 
 These 3 methods are useful for any type of display that uses fixed-width fonts. They are also available with [bytes and bytearrays](https://docs.python.org/3/library/stdtypes.html#bytes-and-bytearray-operations). If you need to further wrap the text, there is [a module](https://docs.python.org/3/library/textwrap.html) just for that.
 
+User @artieleach points out that Python 3 also offers a more powerful string formatting syntax, introduced by [PEP 3101](https://www.python.org/dev/peps/pep-3101/) - with `print('{:>20}'.format(hello))` achieving the same as `rjust()` above.
+
 Python also exposes [an interface to the curses library](https://docs.python.org/3/library/curses.html), which is the de-facto way to create complex, responsive terminal-based user interfaces.
 
 ## Context manager decorations
