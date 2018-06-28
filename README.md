@@ -272,9 +272,9 @@ Source: https://stackoverflow.com/a/3342952
 
 ## Structured data
 
-Python 3.7 introduces Data Classes as the superior method for easily handling data objects in Python. Prior to 3.7, programmers had various benefits and deficits with the several options for structured data (namedtuples, custom classes and using basic dictionaries). Data Classes work to a large extent to be a fully-featured replacement to all those legacy options, following one of Python's core guidelines of "there should only be one obvious way to do it".
+Python 3.7 introduces Data Classes as the superior method for easily handling data objects in Python. Prior to 3.7, programmers had various benefits and deficits with the several options for structured data (Named Tuples, custom classes and using basic dictionaries to structure data). Data Classes work to a large extent as a fully-featured replacement to all those legacy options, following one of Python's core guidelines of "there should only be one obvious way to do it".
 
-To create a Data Class, all you need to do is add the `@dataclass` annotation to a barebones class declartion, which will then proceed to modify your class in-place:
+To create a Data Class, all you need to do is add the `@dataclass` annotation to a barebones class declaration, which will then proceed to modify your class in-place (note that the type hints are optional):
 
 ```
 @dataclass
@@ -288,11 +288,13 @@ class InventoryItem:
         return self.unit_price * self.quantity_on_hand
 ```
 
-The resulting class will be greatly expanded with methods for initialization, string representation, comparison, ordering (optional), hashing (automatic only if safe), getters, setters and immutability (optional). You can further determine how the generated class works by passing [parameters to the @dataclass annotation](https://docs.python.org/3/library/dataclasses.html#dataclasses.dataclass) or using [field() objects](https://docs.python.org/3/library/dataclasses.html#dataclasses.field) to describe the behavior of your class fields.
+The resulting class will be greatly expanded with methods for initialization, string representation, comparison, ordering (optional), hashing (automatic only if safe), getters, setters and immutability (optional). You can further determine final result by passing [parameters to the @dataclass annotation](https://docs.python.org/3/library/dataclasses.html#dataclasses.dataclass) or using [field() objects](https://docs.python.org/3/library/dataclasses.html#dataclasses.field) to describe the behavior of your instance fields.
 
-Compared to the older data approaches to Python, Data Classes are type-friendly, allow for the full scope of object-oriented programming: inheritance (between plain classes and other Data Classes), static fields and methods, metaclasses... You can also easily work with legacy code that expects tuples or dictionaries by using the helper methods [dataclasses.asdict()](https://docs.python.org/3/library/dataclasses.html#dataclasses.asdict) and [dataclasses.astuple()](https://docs.python.org/3/library/dataclasses.html#dataclasses.astuple).
+Compared to the older data approaches to Python, Data Classes are type-friendly and allow for the full scope of object-oriented programming: inheritance (between plain classes and other Data Classes), static fields and methods, metaclasses... You can also easily work with legacy code that expects tuples or dictionaries by using the helper methods [dataclasses.asdict()](https://docs.python.org/3/library/dataclasses.html#dataclasses.asdict) and [dataclasses.astuple()](https://docs.python.org/3/library/dataclasses.html#dataclasses.astuple).
 
-Although a powerful and versatile tool, Data Classes, as the name implies, are meant for the specific case of classes that mostly handle structured data. In some more complex cases, you may want to write a custom class yourself instead of relying on automatic generation provided by this approach. The third-party module [attrs]() is a similar tool to Data Classes but providing even more features (from validation to metadata) that might work better to more complex tasks.
+Although a powerful and versatile tool, Data Classes, as the name implies, are meant for the specific case of classes that mostly handle structured data. In some more complex cases, you may want to write a custom class yourself instead of relying on automatic generation provided by this approach. The third-party module [attrs](http://www.attrs.org/en/stable/) is a similar tool to Data Classes but providing even more features (from validation to metadata) that might work better for more complex tasks.
+
+Source https://www.python.org/dev/peps/pep-0557/
 
 ## Unconventional "else" blocks
 
