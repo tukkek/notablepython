@@ -8,7 +8,7 @@ On the other hand, sometimes these can greatly simplify the solution to a proble
 
 Feel free to submit [a new issue to this project's tracker](https://github.com/tukkek/notablepython/issues/new) or a pull request if you feel like I have missed out on something. However, keep in mind that I have to draw the line between "underutilized" and "standard" Python somewhere, which is why you won't see things such as decorators or generators being discussed here, even though a lot of begginer Python coders would find them to be somewhat esoteric upon first encountering them, especially if they're coming from older languages or just now learning how to code.
 
-This document is up-to-date with **Python 3.6.3**.
+This document is up-to-date with **Python 3.7.0**.
 
 - [Notable Python features](#notable-python-features)
   * [Boolean arithmetic](#boolean-arithmetic)
@@ -272,56 +272,27 @@ Source: https://stackoverflow.com/a/3342952
 
 ## Structured data
 
-```py
-class Person:
-    def __init__(self,name,email,age):
-        self.name=name
-        self.email=email
-        self.age=age
-    def __repr__(self):
-        return "User "+self.name
-    def is_minor(self):
-        return self.age < 18
-        
-alice=Person('Alice','alice@python.org','20')
-print(alice) #prints: User Alice
-print(alice.name) #prints: Alice
+Python 3.7 introduces Data Classes as the superior method for easily handling data objects in Python. Prior to 3.7, programmers had various benefits and deficits with the several options for structured data (namedtuples, custom classes and using basic dictionaries). Data Classes work to a large extent to be a fully-featured replacement to all those legacy options, following one of Python's core guidelines of "there should only be one obvious way to do it".
+
+To create a Data Class, all you need to do is add the `@dataclass` annotation to a barebones class declartion, which will then proceed to modify your class in-place:
+
+```
+@dataclass
+class InventoryItem:
+    '''Class for keeping track of an item in inventory.'''
+    name: str
+    unit_price: float
+    quantity_on_hand: int = 0
+
+    def total_cost(self) -> float:
+        return self.unit_price * self.quantity_on_hand
 ```
 
-Here it's shown how a class can used to store data. Using classes has major benefits, such as mixing data and functionality (as seen in the `is_minor` method); allowing you to create a sub-class hierarchy; making use of [special methods](https://docs.python.org/3/reference/datamodel.html#special-method-names) (such as `__repr__`, shown above); providing getters and setters; constructors... explaining the object-oriented programming paradigm is out of the scope of this document but you can [read a primer here](https://docs.python.org/3/tutorial/classes.html).
+The resulting class will be greatly expanded with methods for initialization, string representation, comparison, ordering (optional), hashing (automatic only if safe), getters, setters and immutability (optional). You can further determine how the generated class works by passing [parameters to the @dataclass annotation](https://docs.python.org/3/library/dataclasses.html#dataclasses.dataclass) or using [field() objects](https://docs.python.org/3/library/dataclasses.html#dataclasses.field) to describe the behavior of your class fields.
 
-```py
-from collections import namedtuple
-Person = namedtuple('Person', 'name email age')
-bob = Person('Bob', 'bob@python.org', 30)
-print(bob) #prints: Person(name='Bob', email='bob@python.org', age=30)
-print(bob.name) #prints: Bob
-```
+Compared to the older data approaches to Python, Data Classes are type-friendly, allow for the full scope of object-oriented programming: inheritance (between plain classes and other Data Classes), static fields and methods, metaclasses... You can also easily work with legacy code that expects tuples or dictionaries by using the helper methods [dataclasses.asdict()](https://docs.python.org/3/library/dataclasses.html#dataclasses.asdict) and [dataclasses.astuple()](https://docs.python.org/3/library/dataclasses.html#dataclasses.astuple).
 
-Named tuples offer a much more concise way of representing your data. However, as all Python tuples, they are read-only. The method [namedtuple()](https://docs.python.org/3/library/collections.html#namedtuple-factory-function-for-tuples-with-named-fields) actually returns a class (notice the uppercase `Person` identifier), so you can actually extend it in a new subclass to add more functionality, if needed (though adding new data fields manually is discouraged).
-
-This method allows you to define the tuple structure once and create multiple instances of it (because, again, it is just a short-hand class definition). It also makes sure that these objects can only be created by providing a value to every declared field, raising an error otherwise. For these exact reasons, this is very useful to create in-memory representations of things like database query results, with the named tuple itself representing the table structure and each instance representing an entry (in the case of a relational database query).
-
-There is also a [type-friendly version of namedtuple](https://docs.python.org/3/library/typing.html#typing.NamedTuple) available.
-
-```py
-carol = dict(name='Carol', email='carol@python.org', age=40)
-carol = {'name':'Carol', 'email':'carol@python.org', 'age':40}
-print(carol) #prints: {'age': 40, 'email': 'carol@python.org', 'name': 'Carol'}
-print(carol['name']) #prints: Carol
-```
-
-The simplest and perhaps most pythonic example is simply using a dictionary to represent your data. Note that both notations above produce identical results.
-
-Of the benefits of using a dictionary to holding your data, first comes its simplicity. Second, the fact that dictionaries have excellent support in Python, which allows you to easily use them in a myriad of built-in (and third-party) methods seamlessly. They are also mutable and allow modifying the values of fields and adding or removing fields at any point of their life-cycle.
-
-Its main disadvantage is that you have no integrated data safety: it's easy to forget or mistype a data field name if you're trying to create more than one instance of each data type (in our example here, mora than one `Person`), resulting in errors that are hard to identify later on. They are also difficult to maintain in the long run: it's much easier to remove a field from a class or a named tuple and have errors be thrown immediately when non-conforming cases attempt to be created - making sure your code is safe as long as your one structure definition is correct.
-
-**Which one do I use, then?** One of the rules of Python code is that, ideally, there should only be one way to do something - which brings the question: why are there so many ways of structuring my data? The answer is that each has its own use cases:
-
-* If you're only going to use that data inside a single function, module or script use **dictionaries** as they are simpler and more pythonic. This should only be an option if data safety is not an issue for you - for example, if all your data instances are created from a single loop, ensuring that there is no chance at all of you mistyping your data format in another location. Dictionaries are also the only approach that allows you to add or remove data fields after an instance has been created.
-* If you need data safety or you are planning on creating many instances of this data type across your code, use **named tuples**. They are declared once and can be used anywhere after that (as long as you keep the returned reference easily accessible in your code). The downside is that tuples aren't mutable so if you need to change your data after creation, this isn't an option for you.
-* If your data type is a central part of a larger project (even if it's simple and non-mutable data) define and use a **class** for it. This allows you much more flexiblity in the future: be it an hour from now when you realize you need to make sure a certain string field is always lowercase; or a year from now when you realize that you're going to have to work with not one but six different types of the same data, each of them behaving differently in each situation and possibly having additional fields, etc.
+Although a powerful and versatile tool, Data Classes, as the name implies, are meant for the specific case of classes that mostly handle structured data. In some more complex cases, you may want to write a custom class yourself instead of relying on automatic generation provided by this approach. The third-party module [attrs]() is a similar tool to Data Classes but providing even more features (from validation to metadata) that might work better to more complex tasks.
 
 ## Unconventional "else" blocks
 
