@@ -276,7 +276,7 @@ Python 3.7 introduces Data Classes as the superior method for easily handling da
 
 To create a Data Class, all you need to do is add the `@dataclass` annotation to a barebones class declaration, which will then proceed to modify your class in-place (note that the type hints are optional):
 
-```
+```python
 @dataclass
 class InventoryItem:
     '''Class for keeping track of an item in inventory.'''
