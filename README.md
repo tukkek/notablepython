@@ -8,7 +8,7 @@ On the other hand, sometimes these can greatly simplify the solution to a proble
 
 Feel free to submit [a new issue to this project's tracker](https://github.com/tukkek/notablepython/issues/new) or a pull request if you feel like I have missed out on something. However, keep in mind that I have to draw the line between "underutilized" and "standard" Python somewhere, which is why you won't see things such as decorators or generators being discussed here, even though a lot of begginer Python coders would find them to be somewhat esoteric upon first encountering them, especially if they're coming from older languages or just now learning how to code.
 
-This document is up-to-date with **Python 3.7.0**.
+This document is up-to-date with **Python 3.9**.
 
 - [Notable Python features](#notable-python-features)
   * [Boolean arithmetic](#boolean-arithmetic)
@@ -211,6 +211,15 @@ print('{name} is {age} years old.'.format_map(alice))
 ```
 
 If you want to format strings by using mapping data structures (such as dictionaries), you can go back to the traditional formatted strings and use their [format_map()](https://docs.python.org/3/library/stdtypes.html#str.format_map) function.
+
+With Python 3.8, a new `=` operator has been added to f-strings that is quite useful for debugging purposes! Check it out:
+
+```py
+name='Alice'
+print(f'{name=} {name.upper()=}') 
+
+# Prints: name='Alice' name.upper()='ALICE'
+```
 
 ## Generator expressions
 
